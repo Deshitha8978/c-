@@ -37,6 +37,8 @@ int main()
         printf("4.triangle\n");
         printf("enter choice");
         scanf("%d",&c);
+    if(c==5)
+     break;
     
     switch(c)
     {
@@ -68,13 +70,9 @@ int main()
             printf("the area of triangle is: %d\n",f);
             break;
         }
-        if(c==5)
-        {
-            break;
-        }
         default :
         {
-            break;
+            printf("enter a valid number");
         }
         
     }
