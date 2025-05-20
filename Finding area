@@ -1,0 +1,83 @@
+#include <stdio.h>
+void area()
+{
+    
+    printf("enter radius:");
+    int r,a;
+    scanf("%d",&r);
+    a=3.14*r*r;
+    printf("the area of circle is %d:\n",a);
+    
+}
+void sum(int l,int b)
+{
+    printf("the area of rectangle is %d:\n",l*b);
+}
+int add()
+{
+    int s;
+    printf("enter the side:");
+    scanf("%d",&s);
+    return s*s;
+}
+int res(int p,int h)
+{
+    int e=0.5*p*h;
+    return e;
+}
+
+int main()
+{
+    while(1)
+    {
+        int c;
+        printf("1.Circle\n");
+        printf("2.Rectangle\n");
+        printf("3.Square\n");
+        printf("4.triangle\n");
+        printf("enter choice");
+        scanf("%d",&c);
+    
+    switch(c)
+    {
+        case 1:
+        {
+            area();
+            break;
+        }
+        case 2:
+        {
+            int l,b;
+            printf("enter nums:");
+            scanf("%d%d",&l,&b);
+            sum(l,b);
+            break;
+        }
+        case 3:
+        {
+            int d=add();
+            printf("the area of square is: %d\n",d);
+            break;
+        }
+        case 4:
+        {
+            int p,h;
+            printf("enter nums2:");
+            scanf("%d%d",&p,&h);
+            int f=res(p,h);
+            printf("the area of triangle is: %d\n",f);
+            break;
+        }
+        if(c==5)
+        {
+            break;
+        }
+        default :
+        {
+            break;
+        }
+        
+    }
+    }
+    return 0;
+}
