@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include<string.h>
+float cal(int marks[5])
+{
+    int sum=0;
+    for(int i=0;i<5;i++)
+    {
+        sum=sum+marks[i];
+    }
+    return sum/5;
+}
+void sorting(float percent[5],char names[5][20])
+{
+    int temp;
+    char temp1[5];
+    for(int i=0;i<4;i++)
+    {
+        for(int j=i+1;j<5;j++)
+        {
+            if(percent[i]<percent[j])
+            {
+                temp=percent[i];
+                percent[i]=percent[j];
+                percent[j]=temp;
+                
+                strcpy(temp1,names[i]);
+                strcpy(names[i],names[j]);
+                strcpy(names[j],temp1);
+            }
+        }
+        
+    }
+}
+
+int main()
+{
+    int marks[5][5]={{8,45,68,49,78},
+                    {75,68,68,38,39},
+                    {67,39,88,68,29},
+                    {89,83,86,96,92},
+                    {65,78,39,94,89}};
+    char names[5][20]={"desi","bindhu","arbia","lav","lohi"};
+    float percent[5];
+    for(int i=0;i<5;i++)
+    {
+        percent[i]=cal(marks[i]);
+    }
+    sorting(percent,names);
+    
+    for(int i=0;i<5;i++)
+    {
+        printf("Rank %d Mr/Ms %s of percent %f",i+1,names[i],percent[i]);
+    }
+    return 0;
+    
+}
